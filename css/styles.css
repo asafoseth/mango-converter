@@ -1,0 +1,38 @@
+#comparisonContainer {
+    position: relative;
+    margin-top: 20px;
+}
+
+#comparisonSlider {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    cursor: ew-resize;
+}
+
+.comparisonImage {
+    width: 100%;
+    height: auto;
+    display: inline-block;
+}
+
+#originalImageContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+#compressedImageContainer img {
+    display: block;
+}
+
+#compressionSlider {
+    width: 100%;
+    margin-top: 10px;
+}
+
+#compressionValue {
+    margin-left: 10px;
+    font-weight: bold;
+}
