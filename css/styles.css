@@ -1,38 +1,44 @@
-#comparisonContainer {
-    position: relative;
-    margin-top: 20px;
+body {
+    background-color: #f8f9fa;
+    padding: 30px;
 }
 
-#comparisonSlider {
+.custom-file-upload {
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+}
+
+.card-header {
+    background-color: #ffcc00;
+    color: #333;
+    font-weight: bold;
+}
+
+.slider-label {
+    font-weight: bold;
+}
+
+.img-comparison-container {
     position: relative;
     width: 100%;
     overflow: hidden;
-    cursor: ew-resize;
 }
 
-.comparisonImage {
+.img-comparison-container img {
     width: 100%;
-    height: auto;
-    display: inline-block;
-}
-
-#originalImageContainer {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1;
-}
-
-#compressedImageContainer img {
     display: block;
 }
 
-#compressionSlider {
+.img-comparison-container input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
     width: 100%;
-    margin-top: 10px;
-}
-
-#compressionValue {
-    margin-left: 10px;
-    font-weight: bold;
+    height: 2px;
+    background: #ffcc00;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    z-index: 3;
 }
