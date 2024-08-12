@@ -3,51 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Image Compression Tool</title>
+    <title>MangoCrush - Image Compression Tool</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
     <div class="container">
-        <h1>Image Compression Tool</h1>
-        
-        <div id="dropZone">
-            <p>Drag and drop an image here or click to upload</p>
-            <input type="file" id="imageInput" accept="image/*">
+        <div class="card shadow-sm">
+            <div class="card-header text-center">
+                🍋 MangoCrush - Image Compression Tool
+            </div>
+            <div class="card-body">
+                <form id="uploadForm">
+                    <div class="mb-3">
+                        <label for="imageUpload" class="form-label">Upload an Image:</label>
+                        <input class="form-control" type="file" id="imageUpload" accept="image/*">
+                    </div>
+                    <div class="mb-3">
+                        <label for="compressionSlider" class="form-label slider-label">Compression Level</label>
+                        <input type="range" class="form-range" id="compressionSlider" min="0" max="100" value="50">
+                    </div>
+                    <div class="mb-3">
+                        <label for="imageFormat" class="form-label slider-label">Select Output Format:</label>
+                        <select class="form-select" id="imageFormat">
+                            <option value="jpeg">JPEG</option>
+                            <option value="png">PNG</option>
+                            <option value="webp">WebP</option>
+                        </select>
+                    </div>
+                    <div class="text-center">
+                        <button type="button" class="btn btn-warning" id="compressButton">Compress Image</button>
+                    </div>
+                </form>
+            </div>
         </div>
 
-        <label for="widthInput">Width:</label>
-        <input type="number" id="widthInput" placeholder="Width (optional)">
-        
-        <label for="heightInput">Height:</label>
-        <input type="number" id="heightInput" placeholder="Height (optional)">
-
-        <label for="algorithmSelect">Format:</label>
-        <select id="algorithmSelect">
-            <option value="jpeg">JPEG</option>
-            <option value="png">PNG</option>
-            <option value="webp">WebP</option>
-        </select>
-
-        <label for="compressionLevel">Compression Level:</label>
-        <input type="range" id="compressionSlider" min="1" max="100" value="50">
-        <span id="compressionValue">50</span>%
-
-        <button id="compressButton">Compress Image</button>
-
-        <div id="comparisonContainer">
-            <h2>Compare Original vs Compressed</h2>
-            <div id="comparisonSlider">
-                <div class="comparisonImage" id="originalImageContainer">
-                    <img id="originalImage" src="" alt="Original Image">
+        <div id="previewContainer" class="mt-4">
+            <div class="card shadow-sm">
+                <div class="card-header text-center">
+                    Preview and Compare
                 </div>
-                <div class="comparisonImage" id="compressedImageContainer">
-                    <img id="compressedImage" src="" alt="Compressed Image">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h5 class="text-center">Original Image</h5>
+                            <img id="originalImage" class="img-fluid rounded shadow-sm" alt="Original">
+                        </div>
+                        <div class="col-md-6">
+                            <h5 class="text-center">Compressed Image</h5>
+                            <img id="compressedImage" class="img-fluid rounded shadow-sm" alt="Compressed">
+                        </div>
+                    </div>
+                    <div class="img-comparison-container mt-4">
+                        <input type="range" id="comparisonSlider">
+                        <img id="compareImageOriginal" alt="Compare Original">
+                        <img id="compareImageCompressed" alt="Compare Compressed" style="position: absolute; top: 0; left: 0;">
+                    </div>
+                </div>
+                <div class="card-footer text-center">
+                    <button type="button" class="btn btn-success" id="downloadButton">Download Compressed Image</button>
                 </div>
             </div>
         </div>
-        
-        <a id="downloadLink" download="compressed_image">Download Compressed Image</a>
     </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- JavaScript File -->
     <script src="js/script.js"></script>
 </body>
 </html>
