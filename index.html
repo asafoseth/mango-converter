@@ -1,9 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-
-    </head>
-    <body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Compression Tool</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Image Compression Tool</h1>
         
-    </body>
+        <div id="dropZone">
+            <p>Drag and drop an image here or click to upload</p>
+            <input type="file" id="imageInput" accept="image/*">
+        </div>
+
+        <label for="widthInput">Width:</label>
+        <input type="number" id="widthInput" placeholder="Width (optional)">
+        
+        <label for="heightInput">Height:</label>
+        <input type="number" id="heightInput" placeholder="Height (optional)">
+
+        <label for="algorithmSelect">Format:</label>
+        <select id="algorithmSelect">
+            <option value="jpeg">JPEG</option>
+            <option value="png">PNG</option>
+            <option value="webp">WebP</option>
+        </select>
+
+        <label for="compressionLevel">Compression Level:</label>
+        <input type="range" id="compressionSlider" min="1" max="100" value="50">
+        <span id="compressionValue">50</span>%
+
+        <button id="compressButton">Compress Image</button>
+
+        <div id="comparisonContainer">
+            <h2>Compare Original vs Compressed</h2>
+            <div id="comparisonSlider">
+                <div class="comparisonImage" id="originalImageContainer">
+                    <img id="originalImage" src="" alt="Original Image">
+                </div>
+                <div class="comparisonImage" id="compressedImageContainer">
+                    <img id="compressedImage" src="" alt="Compressed Image">
+                </div>
+            </div>
+        </div>
+        
+        <a id="downloadLink" download="compressed_image">Download Compressed Image</a>
+    </div>
+    <script src="js/script.js"></script>
+</body>
 </html>
