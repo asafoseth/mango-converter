@@ -92,7 +92,7 @@ MangoCrush is licensed under the MIT License. See the [LICENSE](LICENSE) file fo
 ## **Acknowledgments**
 
 - **Inspiration**: This project was inspired by the need for a user-friendly and educational image compression tool that goes beyond basic functionality.
-- **Technologies Used**: HTML, CSS, JavaScript, Canvas API, and optional machine learning services for AI-powered recommendations.
+- **Technologies Used**: HTML, CSS, JavaScript, Canvas API, and in future machine learning services for AI-powered recommendations.
 
 ---
 
